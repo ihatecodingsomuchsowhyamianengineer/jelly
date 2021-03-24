@@ -1,0 +1,47 @@
+public class JellyfishEntityModel extends EntityModel<JellyfishEntity> {
+    private final ModelPart bone;
+    private final ModelPart bone2;
+
+    public JellyfishEntityModel() {
+        textureWidth = 64;
+        textureHeight = 64;
+        bone = new ModelPart(this);
+        bone.setPivot(0.0F, 24.0F, 0.0F);
+        bone.setTextureOffset(10, 16).addCuboid(-3.0F, -10.0F, -4.0F, 6.0F, 2.0F, 1.0F, 0.0F, false);
+        bone.setTextureOffset(0, 0).addCuboid(-3.0F, -11.0F, -3.0F, 6.0F, 1.0F, 6.0F, 0.0F, false);
+        bone.setTextureOffset(2, 16).addCuboid(-4.0F, -10.0F, -3.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
+        bone.setTextureOffset(8, 8).addCuboid(3.0F, -10.0F, -3.0F, 1.0F, 2.0F, 6.0F, 0.0F, false);
+        bone.setTextureOffset(16, 7).addCuboid(-3.0F, -10.0F, 3.0F, 6.0F, 2.0F, 1.0F, 0.0F, false);
+
+        bone2 = new ModelPart(this);
+        bone2.setPivot(0.0F, 24.0F, 0.0F);
+        bone2.setTextureOffset(24, 24).addCuboid(-3.0F, -8.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(12, 24).addCuboid(-3.0F, -8.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(23, 10).addCuboid(2.0F, -8.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(8, 7).addCuboid(2.0F, -8.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(0, 7).addCuboid(-1.0F, -9.0F, -1.0F, 2.0F, 13.0F, 2.0F, 0.0F, false);
+        bone2.setTextureOffset(8, 24).addCuboid(-0.5F, 4.0F, -0.5F, 1.0F, 7.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(4, 24).addCuboid(-0.5F, -8.0F, 2.75F, 1.0F, 9.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(20, 20).addCuboid(-3.75F, -8.0F, -0.5F, 1.0F, 9.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(16, 19).addCuboid(2.75F, -8.0F, -0.5F, 1.0F, 9.0F, 1.0F, 0.0F, false);
+        bone2.setTextureOffset(0, 24).addCuboid(-0.5F, -8.0F, -3.75F, 1.0F, 9.0F, 1.0F, 0.0F, false);
+    }
+
+    @Override
+    public void setAngles(JellyfishEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+
+    }
+
+    @Override
+    public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+
+        bone.render(matrixStack, buffer, packedLight, packedOverlay);
+        bone2.render(matrixStack, buffer, packedLight, packedOverlay);
+    }
+
+    public void setRotationAngle(ModelPart bone, float x, float y, float z) {
+        bone.pitch = x;
+        bone.yaw = y;
+        bone.roll = z;
+    }
+}
